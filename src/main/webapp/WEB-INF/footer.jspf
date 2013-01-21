@@ -1,3 +1,10 @@
+<hr/>
+    <div class="row">
+		<div class="span12 pagination-centered">
+			COPYRIGHT: NONE
+		</div>
+    </div>
+    
 <!-- /container -->
 </div> 
 
@@ -17,12 +24,7 @@
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
     
-	<hr/>
-    <div class="row">
-		<div class="span4 offset2">
-			COPYRIGHT: NONE
-		</div>
-    </div>
+	
 
   </body>
 </html>
