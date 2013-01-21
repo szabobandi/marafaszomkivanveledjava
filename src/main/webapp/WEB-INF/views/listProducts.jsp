@@ -7,14 +7,25 @@
 
 <hr/><br/>
 
-<c:forEach items="${products}" var="product">
+	<div class="row">
+		<div class="span1"> <h5>id</h5> </div>
+		<div class="span2"> <h5>name</h5> </div>
+		<div class="span1"> <h5>price</h5> </div>
+	</div>
 
+<c:forEach items="${products}" var="product">
+	
 	<div class="row">
 	
-		<div class="span3">
-			${product.id} :  ${product.name} [${product.price }] 
+		<div class="span1">
+			${product.id}
 		</div>
-		
+		<div class="span2">		
+			${product.name}
+		</div>
+		<div class="span1">
+			${product.price}
+		</div> 
 		<div class="span1">
 			<c:url var="editUrl" value="/product/edit" >
 				<c:param name="id" value="${product.id}" />
@@ -35,6 +46,5 @@
 				</a>
 		</div>	
 	</div>
-	<div class="row"><div class="span12"><br/></div></div>
 
 </c:forEach>

@@ -1,7 +1,9 @@
-<hr/>
-    <div class="row">
+
+    <div id="footer" class="row">
 		<div class="span12 pagination-centered">
+			<hr/>
 			COPYRIGHT: NONE
+			<br>
 		</div>
     </div>
     
