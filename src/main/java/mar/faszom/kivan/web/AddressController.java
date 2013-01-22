@@ -5,12 +5,15 @@ import javax.servlet.http.HttpSession;
 import mar.faszom.kivan.domain.Address;
 import mar.faszom.kivan.domain.AddressRepo;
 import mar.faszom.kivan.domain.IdGenerator;
+import mar.faszom.kivan.web.validation.AddressValidator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +28,11 @@ public class AddressController {
 	@Autowired
 	IdGenerator generator;
 
+	@InitBinder 
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(new AddressValidator());
+    }
+	
 	@RequestMapping("list")
 	public String list(Model model, HttpSession session) {
 
@@ -55,20 +63,20 @@ public class AddressController {
 	}
 
 	@RequestMapping("add")
-	public String add(@ModelAttribute Address address, BindingResult binding, Model model) {
-
-		if (address.getCity() == null || address.getCity().trim().length() < 1) {
-			binding.addError(new FieldError("address", "city", "required"));
-		}
-
-		if (address.getZip() == null || address.getZip().trim().length() < 1) {
-			binding.addError(new FieldError("address", "zip", "required"));
-		}
-
-		if (address.getStreet() == null || address.getStreet().trim().length() < 1) {
-			binding.addError(new FieldError("address", "street", "required"));
-		}
-
+	public String add(@Validated @ModelAttribute Address address, BindingResult binding, Model model) {
+//
+//		if (address.getCity() == null || address.getCity().trim().length() < 1) {
+//			binding.addError(new FieldError("address", "city", "required"));
+//		}
+//
+//		if (address.getZip() == null || address.getZip().trim().length() < 1) {
+//			binding.addError(new FieldError("address", "zip", "required"));
+//		}
+//
+//		if (address.getStreet() == null || address.getStreet().trim().length() < 1) {
+//			binding.addError(new FieldError("address", "street", "required"));
+//		}
+		
 		if (! binding.hasErrors()) {
 			if(address.getId() == null) {
 				address.setId(generator.nextId("Address"));

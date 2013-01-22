@@ -81,15 +81,22 @@
 
 <div class="row"> 
 	<div class="span3">
+	
 		<form:form action="${formUrl }" method="post" cssClass="form-horizontal" modelAttribute="address">
+			
+			
 			<input type="hidden" name="id" value="${address.id }" />
 				<form:input path="street"  />
+				<c:set var="fieldError" ><form:errors path="${address.street}" /></c:set>
+				<c:if test="${not empty filedError}">
+      				<span class="help-inline">${fieldError }</span>
+    			</c:if>
 	</div>
 	<div class="span3">
-				<form:input path="zip" />
+				<mine:input name="city" value="${address.city}" />
 	</div>
 	<div class="span3">
-				<form:input path="city" />
+				<mine:input name="zip" value="${address.zip}" />
 	</div>
 	<div class="span1">
 			<button type="submit" class="btn btn-primary" name="command" value="add"  >
