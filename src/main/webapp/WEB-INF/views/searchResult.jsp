@@ -25,5 +25,6 @@
 			${product.price}
 		</div>
 	</div>
+	<hr/>
 </c:forEach>
 

@@ -46,5 +46,5 @@
 				</a>
 		</div>	
 	</div>
-
+	<hr/>
 </c:forEach>

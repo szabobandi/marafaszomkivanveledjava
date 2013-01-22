@@ -40,6 +40,13 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>	
 		
+		<!-- search for this -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
