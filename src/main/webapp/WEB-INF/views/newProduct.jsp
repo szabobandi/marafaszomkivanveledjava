@@ -1,13 +1,18 @@
 <div class="row">
 	<div class="span12">
-		<h2>edit product</h2>
+		<h2>new product</h2>
 	</div>
 </div>
 
 <hr/><br/>
 
-<c:url var="formUrl" value="/product/save" />
+<c:url var="formUrl" value="/product/add" />
 
+<c:if test="${not empty errorMsg }">
+	<div class="alert alert-error">
+ 		${errorMsg} 
+	</div>
+</c:if>
 
 <div class="row"> 
 	<div class="span3">
@@ -22,16 +27,15 @@
 	<div class="span3">
 		
 		<form:form action="${formUrl }" method="post" cssClass="form-horizontal" modelAttribute="product">
-			<input type="hidden" name="id"  value="${product.id}"/>
-			<input type="text" name="name" value="${product.name}" />
-	</div>
+			<form:input path="name"/>
+	</div>	
 	<div class="span 3">
-			<input type="text" name="price" value="${product.price}" />
-	</div>
+			<form:input path="price" />
+  	</div>
+	
 	<div class="span 1">
-			<button type="submit" class="btn btn-primary" name="command" value="save" >Save</button>
+			<button type="submit" class="btn btn-primary" name="command" value="add" >add</button>
 		</form:form>
 	</div>
-
+		
 </div>
-

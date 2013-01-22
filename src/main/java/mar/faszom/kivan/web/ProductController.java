@@ -42,9 +42,8 @@ public class ProductController {
 
 	@RequestMapping("add")
 	public String add(@ModelAttribute Product product, BindingResult bindingResult, Model model) {
-		bindingResult.addError(new FieldError("product", "name", "nem tetszik"));
 		if (bindingResult.hasErrors()) {
-			model.addAttribute("errorMsg", "baj van ...");
+			model.addAttribute("errorMessage", "price must be a number");
 			return "newProduct";
 		}
 

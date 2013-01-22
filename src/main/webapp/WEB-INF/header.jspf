@@ -56,9 +56,9 @@
           <a class="brand" href="#">MY WEBSHOP</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              
-			  <li class=""><a href="/product/list">Products</a></li>	
+                           
+			  <li class=""><a href="/product/list">Products</a></li>
+			  <li class=""><a href="/product/form">Add product</a></li>
 				
             </ul>
           </div><!--/.nav-collapse -->
